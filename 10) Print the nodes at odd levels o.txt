@@ -1,0 +1,22 @@
+10) Print the nodes at odd levels of a tree:
+
+def print_odd_level_nodes(root):
+    if not root:
+        return
+
+    queue = deque([(root, 1)])
+
+    while queue:
+        current, level = queue.popleft()
+
+        if level % 2 != 0:
+            print(current.val, end=" ")
+
+        if current.left:
+            queue.append((current.left, level + 1))
+        if current.right:
+            queue.append((current.right, level + 1))
+
+# Example Usage:
+print("Nodes at odd levels:")
+print_odd_level_nodes(root)

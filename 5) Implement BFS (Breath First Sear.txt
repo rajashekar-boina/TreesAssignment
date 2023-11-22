@@ -1,0 +1,64 @@
+5)Breadth First Search (BFS) for a Binary Tree:
+
+from collections import deque
+
+def bfs_binary_tree(root):
+    if not root:
+        return
+
+    queue = deque([root])
+
+    while queue:
+        current = queue.popleft()
+        print(current.val, end=" ")
+
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+
+# Example Usage:
+# Assuming 'root' is the root node of your binary tree
+bfs_binary_tree(root)
+
+Pre-order DFS:
+def dfs_preorder_binary_tree(root):
+    if not root:
+        return
+
+    print(root.val, end=" ")
+    dfs_preorder_binary_tree(root.left)
+    dfs_preorder_binary_tree(root.right)
+
+# Example Usage:
+# Assuming 'root' is the root node of your binary tree
+dfs_preorder_binary_tree(root)
+
+
+In-order DFS:
+
+def dfs_inorder_binary_tree(root):
+    if not root:
+        return
+
+    dfs_inorder_binary_tree(root.left)
+    print(root.val, end=" ")
+    dfs_inorder_binary_tree(root.right)
+
+# Example Usage:
+# Assuming 'root' is the root node of your binary tree
+dfs_inorder_binary_tree(root)
+
+Post-order DFS:
+
+def dfs_postorder_binary_tree(root):
+    if not root:
+        return
+
+    dfs_postorder_binary_tree(root.left)
+    dfs_postorder_binary_tree(root.right)
+    print(root.val, end=" ")
+
+# Example Usage:
+# Assuming 'root' is the root node of your binary tree
+dfs_postorder_binary_tree(root)

@@ -1,0 +1,14 @@
+7) Find sum of all nodes of the given perfect binary tree:
+
+Assuming a perfect binary tree where each node has either 0 or 2 children:
+
+
+def sum_of_nodes_perfect_binary_tree(root):
+    if not root:
+        return 0
+
+    return root.val + 2 * sum_of_nodes_perfect_binary_tree(root.left)
+
+# Example Usage:
+perfect_tree_sum = sum_of_nodes_perfect_binary_tree(root)
+print("Sum of nodes in a perfect binary tree:", perfect_tree_sum)

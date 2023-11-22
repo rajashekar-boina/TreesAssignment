@@ -1,0 +1,12 @@
+4) Function to print all the leaves in a given binary tree:
+
+def print_leaves(node):
+    if node:
+        if not node.left and not node.right:
+            print(node.val, end=" ")
+        print_leaves(node.left)
+        print_leaves(node.right)
+
+# Example Usage:
+print("Leaves of the tree:")
+print_leaves(root)

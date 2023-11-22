@@ -1,0 +1,19 @@
+6) Find sum of all left leaves in a given Binary Tree:
+
+def sum_of_left_leaves(root):
+    if not root:
+        return 0
+    
+    sum_left = 0
+
+    if root.left and not root.left.left and not root.left.right:
+        sum_left += root.left.val
+
+    sum_left += sum_of_left_leaves(root.left)
+    sum_left += sum_of_left_leaves(root.right)
+
+    return sum_left
+
+# Example Usage:
+left_leaves_sum = sum_of_left_leaves(root)
+print("Sum of left leaves:", left_leaves_sum)
